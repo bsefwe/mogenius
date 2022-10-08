@@ -1,0 +1,29 @@
+{
+  "log":{
+      "loglevel":"warning",
+      "access":"/var/log/xray/access.log",
+      "error":"/var/log/xray/error.log"
+   },
+  "inbounds": [
+    {
+      "port": PORT,
+      "protocol": "vless",
+      "settings": {
+        "decryption": "none",
+        "clients": [
+          {
+            "id": "UUID"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
